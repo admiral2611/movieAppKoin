@@ -2,7 +2,6 @@ package com.admiral26.movie.ui.home
 
 import android.os.Bundle
 import android.view.View
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.MediatorLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import by.kirich1409.viewbindingdelegate.viewBinding
@@ -12,10 +11,11 @@ import com.admiral26.movie.core.base.BaseFragment
 import com.admiral26.movie.core.model.footerRes.FooterRespons
 import com.admiral26.movie.core.model.headerRes.HeaderRespons
 import com.admiral26.movie.databinding.HomePageBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PagesHome : BaseFragment(R.layout.home_page) {
     private val binding by viewBinding(HomePageBinding::bind)
-    private val homeLD: HomeViewModel by viewModels()
+    private val homeLD: HomeViewModel by viewModel()
     private val data = MediatorLiveData<Pair<HeaderRespons?, FooterRespons?>>()
     private val adapter by lazy { MultiAdapter() }
 

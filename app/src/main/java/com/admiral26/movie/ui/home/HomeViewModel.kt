@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 class HomeViewModel(val repository: MovieRepository) : ViewModel() {
     val movieListLD: MutableLiveData<HeaderRespons> = MutableLiveData()
     val movieFootListLD: MutableLiveData<FooterRespons> = MutableLiveData()
-    val movieErrorLD: MutableLiveData<String> = MutableLiveData()
 
 
     fun getHead() {
